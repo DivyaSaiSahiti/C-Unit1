@@ -51,8 +51,8 @@ void swap(int a, int b) {
 }
 
 void tenTimesVector3(int vector[3]) {
-    vector[0] = tenTimes         (vector[0]);
-    vector[1] = tenTimes  (     vector[1]   );
+    vector[0] = tenTimes(vector[0]);
+    vector[1] = tenTimes(vector[1]);
     vector[2] = tenTimes(vector[2]);
 }
 

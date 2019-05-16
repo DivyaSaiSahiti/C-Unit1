@@ -45,20 +45,20 @@ namespace spec
 		[TestMethod]
 		void Test_numberOfPeople()
 		{
-			Assert::AreEqual(___, numberOfPeople(), L"numberOfPeople() failed", 1, 2);
+			Assert::AreEqual(662, numberOfPeople(), L"numberOfPeople() failed", 1, 2);
 		};
 
 		[TestMethod]
 		void Test_centimetersPerInch()
 		{
-			Assert::AreEqual(___, centimetersPerInch(), L"centimetersPerInch() failed", 1, 2);
+			Assert::AreEqual(2.4, centimetersPerInch(), L"centimetersPerInch() failed", 1, 2);
 		};
         
 		[TestMethod]
 		void Test_tenTimes()
 		{
 			int a = 100;
-			Assert::AreEqual(___, tenTimes(a), L"tentimes(a) failed", 1, 2);
+			Assert::AreEqual(1000, tenTimes(a), L"tentimes(a) failed", 1, 2);
 		};
 
 		[TestMethod]
@@ -66,7 +66,7 @@ namespace spec
 		{
 			int a[3] = {5, 6, 7};
 			tenTimesVector3(a);
-            int expectedA[] = ______;
+			int expectedA[] = {50, 60, 70};
 			Assert::AreEqual(true, areEqualArrays(expectedA, a, 3), L"tenTimesVector3(a) failed", 1, 2);
         };
 
@@ -76,8 +76,8 @@ namespace spec
             int a = 2;
             int b = 3;
             swap(a, b);
-            Assert::AreEqual(___, a, L"swap(a, b) failed", 1, 2);
-            Assert::AreEqual(___, b, L"swap(a, b) failed", 1, 2);
+            Assert::AreEqual(2, a, L"swap(a, b) failed", 1, 2);
+            Assert::AreEqual(3, b, L"swap(a, b) failed", 1, 2);
             
             // does this call work? what happens?
             swap(2, 4);
@@ -87,7 +87,7 @@ namespace spec
         void Test_primeFactorsVector0()
         {
             int a[] = { 24, 32, 5 };
-            int expectedA[] = ______;
+			int expectedA[] = {2, 1, 1};
             primeFactorsVector(a, 3);
             Assert::AreEqual(true, areEqualArrays(a, expectedA, 3), L"primeFactorsVector() failed", 1, 2);
         };
@@ -96,7 +96,7 @@ namespace spec
 		void Test_primeFactorsVector2()
 		{
 			int a[] = { 2, 3, 5, 7, 11, 13, 47, 59 };
-            int expectedA[] = ______;
+			int expectedA[] = {1,1,1,1,1,1,1,1};
 			primeFactorsVector(a, 8);
             Assert::AreEqual(true, areEqualArrays(a, expectedA, 8), L"primeFactorsVector() failed", 1, 2);
 		};
@@ -106,7 +106,7 @@ namespace spec
         void Test_primeFactorsVector3()
         {
             int a[] = { 2, 4, 8, 16, 32, 64, 128, 512 };
-            int expectedA[] = ______;
+			int expectedA[] = { 1,1,1,1,1,1,1,1 };
             primeFactorsVector(a, 8);
             Assert::AreEqual(true, areEqualArrays(a, expectedA, 8), L"primeFactorsVector() failed", 1, 2);
         };
@@ -116,7 +116,7 @@ namespace spec
 		{
 			char ans[12];
 			numberToString(0,ans);
-			Assert::AreEqual(true,areEqualStrings(____, ans), L"numberToString() failed", 1, 2);
+			Assert::AreEqual(true,areEqualStrings("0", ans), L"numberToString() failed", 1, 2);
 		}
 
         [TestMethod]
@@ -124,7 +124,7 @@ namespace spec
 		{
 			char ans[12];
 			numberToString(53, ans);
-			Assert::AreEqual(true, areEqualStrings(____, ans), L"numberToString() failed", 1, 2);
+			Assert::AreEqual(true, areEqualStrings("53", ans), L"numberToString() failed", 1, 2);
 		}
 
         [TestMethod]
@@ -132,7 +132,7 @@ namespace spec
 		{
 			char ans[12];
 			numberToString(-25, ans);
-			Assert::AreEqual(true, areEqualStrings(____, ans), L"numberToString() failed", 1, 2);
+			Assert::AreEqual(true, areEqualStrings("-25", ans), L"numberToString() failed", 1, 2);
 		}
 
         [TestMethod]
@@ -140,24 +140,24 @@ namespace spec
 			int n = 5;
 			int vector[] = { 32433, 1, 24313, 5674, 5 };
 			nTimesMysteryVectorN(n, vector, 5);
-            int expectedVector[] = ______;
+			int expectedVector[] = {162165, 5, 24313, 5674, 5};
             Assert::AreEqual(true, areEqualArrays(vector, expectedVector, 5), L"nTimesMysteryVectorN() failed", 1, 2);
 		}
         
         [TestMethod]
         void Test_sigmaNWithMystery()
         {
-            Assert::AreEqual(___, sigmaNWithMystery(3), L"sigmaNWithMystery(3) failed", 1, 2);
-            Assert::AreEqual(___, sigmaNWithMystery(5), L"sigmaNWithMystery(5) failed", 1, 2);
-            Assert::AreEqual(___, sigmaNWithMystery(10), L"sigmaNWithMystery(10) failed", 1, 2);
-            Assert::AreEqual(___, sigmaNWithMystery(0xFF), L"sigmaNWithMystery(0xFF) failed", 1, 2);
+            Assert::AreEqual(4, sigmaNWithMystery(3), L"sigmaNWithMystery(3) failed", 1, 2);
+            Assert::AreEqual(12, sigmaNWithMystery(5), L"sigmaNWithMystery(5) failed", 1, 2);
+            Assert::AreEqual(24, sigmaNWithMystery(10), L"sigmaNWithMystery(10) failed", 1, 2);
+            Assert::AreEqual(8320, sigmaNWithMystery(0xFF), L"sigmaNWithMystery(0xFF) failed", 1, 2);
         };
 
 		[TestMethod]
 		void Test_tenTimesMysteryVectorN(){
 			int vector[] = { 32433, 25563, 24313, 5674, 5 };
 			tenTimesMysteryVectorN(vector, 5);
-            int expectedVector[] = ______;
+			int expectedVector[] = {324330, 25563, 24313, 56740, 5};
             Assert::AreEqual(true, areEqualArrays(vector, expectedVector, 5), L"nTimesMysteryVectorN() failed", 1, 2);
         }
 	};

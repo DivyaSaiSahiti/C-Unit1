@@ -121,7 +121,7 @@ int mostSignificantByte(int n) {
 int reverseOfNumberByByte(int n) {
     int byte3 = mostSignificantByte(n);
     int byte2 = mostSignificantByte(n << 8);
-    int byte1 = leastSignificantByte(n >> 8);
+    int byte1 = leastSignificantByte(n >> 8);  
     int byte0 = leastSignificantByte(n);
     
     int reverse = (byte0 << 24) | (byte1 << 16) | (byte2 << 8) | byte3;
